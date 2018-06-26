@@ -1,0 +1,68 @@
+{
+  "name": "apex-app-starter",
+  "version": "1.0.0",
+  "description": "Starter repository for apex-app development!",
+  "main": "app/index.js",
+  "scripts": {
+    "develop": "webpack-dev-server --config webpack.config.js",
+    "test": "npm-run-all test-eslint test-jest",
+    "test-eslint": "eslint app/**/*.js",
+    "test-mocha": "mocha app/**/*.spec.js",
+    "build": "gulp copy-to-build && webpack -p --config webpack.config.js",
+    "upload-s3": "gulp upload-s3",
+    "upload-gcs": "gulp upload-gcs",
+    "publish-www-s3": "npm-run-all test build upload-s3",
+    "publish-www-gcs": "npm-run-all test build upload-gcs"
+  },
+  "repository": "https://github.com/apexearth/apex-app-starter",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "no-var": "error"
+    }
+  },
+  "devDependencies": {
+    "async": "^2.6.1",
+    "aws-sdk": "^2.262.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.2",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "gulp": "latest",
+    "gulp-gcloud-publish": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-s3-upload": "latest",
+    "img-loader": "^3.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "localStorage": "^1.0.3",
+    "mini-css-extract-plugin": "^0.4.0",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.3",
+    "nyc": "^12.0.2",
+    "prop-types": "latest",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-visualizer-plugin": "^0.1.11"
+  }
+}
