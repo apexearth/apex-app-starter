@@ -11,18 +11,16 @@ import Home from './pages/Home'
 export default class App extends React.Component {
     constructor() {
         super()
+        let game = require('../game')
     }
 
     componentDidMount() {
-
     }
 
     render() {
         return <Router id="app">
-            <div>
-                <div id="page">
-                    <Route exact path="/" component={Home}/>
-                </div>
+            <div id="page">
+                <Route exact path="/" component={Home}/>
             </div>
         </Router>
     }
